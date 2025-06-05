@@ -1,3 +1,4 @@
+# menú ingredientes, mostrado por medio de un bucle for
 def menu_ingrediente():
     ingre_elegido = []
     ingredientes = {
@@ -14,7 +15,8 @@ def menu_ingrediente():
     print("Elige máximo 3 ingredientes")
     for key, value in ingredientes.items():
         print(f"{key}: {value}")
-    
+
+# bucle elección de ingredientes
     while True:
       valor = int(input("Ingrediente: "))
       ingrediente = ingredientes.get(valor)

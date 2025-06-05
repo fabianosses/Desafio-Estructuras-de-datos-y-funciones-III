@@ -1,3 +1,4 @@
+# menú de tipos de masa mostrado por medio de bucle for
 def menu_masa():
     masas = {
     1: "Masa Tradicional",

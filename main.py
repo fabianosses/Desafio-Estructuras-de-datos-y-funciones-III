@@ -1,7 +1,9 @@
+# importación de funciones de otros archivos desde carpeta pizza
 from pizza.ingredientes import menu_ingrediente
 from pizza.salsa import menu_salsa
 from pizza.masa import menu_masa
 
+# archivo principal
 def main():
   masa = menu_masa()
   salsa = menu_salsa()
@@ -19,6 +21,7 @@ def main():
   return pizza
 
 pizza = (main())
+
 # determinación de tiempo de preparación
 print("tiempo estimado: ")
 c = len(pizza["ingredientes elegidos"])
@@ -38,24 +41,29 @@ while True:
   if confirma not in alternativas:
       print("Opción no válida")
       continue
-
+# elimina pedido de pizza
   if confirma == 1:
       print(f"""Pizza confirmada:
             {pizza}""")
       break
-
+  
+# alternativa para modificar
   elif confirma == 2:
       modifica = int(input("""¿Que desea modificar?:
             1: masa
             2: salsa
             3: ingredientes
             """))
+# modifica masa
       if modifica == 1:
           pizza["masa elegida"] = menu_masa()
+# modifica salsa
       elif modifica == 2:
           pizza["salsa elegida"] = menu_salsa()
+# modifica ingredientes
       elif modifica == 3:
           pizza["ingredientes elegidos"] = menu_ingrediente()
+# cancela pedido
   elif confirma == 3:
       print("Pizza eliminada")
       break
