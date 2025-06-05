@@ -19,11 +19,16 @@ def main():
   return pizza
 
 pizza = (main())
+# determinación de tiempo de preparación
+print("tiempo estimado: ")
+c = len(pizza["ingredientes elegidos"])
+print(f"{c*2+20} min")
 
+#Bucle para confirmar, modificar o eliminar pedido
 while True:
   print(f"""Pizza por confirmar:
           {pizza}""")
-  print("¿Que desea hacer?")
+  print("¿Que desea hacer con el pedido?")
   alternativas = [1, 2, 3]
   confirma = int(input("""
               1: confirmar
